@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      for (let i = 0; i < 10; i++) {
+        // Tạo màu ngẫu nhiên với giá trị RGB
+        let red = Math.floor(Math.random() * 256);
+        let green = Math.floor(Math.random() * 256);
+        let blue = Math.floor(Math.random() * 256);
+        let color = `rgb(${red}, ${green}, ${blue})`;
+
+        // Hiển thị thông báo với màu ngẫu nhiên
+        console.log(`%cMàu sắc đã được thay đổi`, `color: ${color}`);
+      }
+    </script>
+  </body>
+</html>

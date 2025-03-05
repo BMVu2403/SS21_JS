@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Nhập số tiền cần rút
+      let amount = parseInt(
+        prompt("Nhập số tiền cần rút (chia hết cho 1000): ")
+      );
+
+      // Kiểm tra tính hợp lệ
+      if (amount % 1000 !== 0) {
+        console.log("Số tiền không hợp lệ!");
+      } else {
+        // Các mệnh giá tiền trong ATM
+        let bills = [
+          500000, 200000, 100000, 50000, 20000, 10000, 5000, 2000, 1000,
+        ];
+
+        console.log("Số tiền rút: " + amount);
+
+        // Duyệt qua từng mệnh giá
+        for (let bill of bills) {
+          let count = Math.floor(amount / bill); // Tính số tờ tiền
+          if (count > 0) {
+            console.log(bill + " - " + count + " tờ");
+            amount -= count * bill; // Cập nhật số tiền còn lại
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Yêu cầu người dùng nhập chiều ngang và chiều dọc của hình chữ nhật
+      let width = parseInt(prompt("Nhập chiều ngang: "));
+      let height = parseInt(prompt("Nhập chiều dọc: "));
+
+      // Sử dụng thẻ <pre> để giữ nguyên định dạng khi hiển thị trên trình duyệt
+      document.write("<pre>");
+
+      // Duyệt qua từng hàng của hình chữ nhật
+      for (let i = 0; i < height; i++) {
+        // Duyệt qua từng cột trong một hàng
+        for (let j = 0; j < width; j++) {
+          // Kiểm tra nếu là viền ngoài của hình chữ nhật thì in '*'
+          if (i === 0 || i === height - 1 || j === 0 || j === width - 1) {
+            document.write("*");
+          } else {
+            // Nếu không phải viền ngoài thì in khoảng trắng để tạo hình chữ nhật rỗng
+            document.write(" ");
+          }
+        }
+        // Xuống dòng sau mỗi hàng
+        document.write("<br>");
+      }
+
+      // Kết thúc thẻ <pre>
+      document.write("</pre>");
+    </script>
+  </body>
+</html>

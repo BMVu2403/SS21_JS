@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let principal = parseFloat(prompt("Nhập số tiền gửi ban đầu: "));
+      let interestRate =
+        parseFloat(prompt("Nhập lãi suất hàng tháng (%): ")) / 100;
+      let months = parseInt(prompt("Nhập số tháng gửi: "));
+
+      let totalAmount = principal;
+      for (let i = 0; i < months; i++) {
+        totalAmount += totalAmount * interestRate;
+      }
+
+      let interestEarned = totalAmount - principal;
+
+      alert(
+        "Tiền lãi: " +
+          interestEarned.toFixed(3) +
+          "\nTiền nhận được: " +
+          totalAmount.toFixed(3)
+      );
+    </script>
+  </body>
+</html>
